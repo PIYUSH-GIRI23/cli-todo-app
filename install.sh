@@ -35,6 +35,6 @@ echo "   mytodo help"
 
 echo ""
 echo "Follow:"
-echo "  X: https://x.com/shadowkatanax"
-echo "  GitHub: https://github.com/PIYUSH-GIRI/"
+echo "  X: https://x.com/GIRIPIYUSH2310"
+echo "  GitHub: https://github.com/PIYUSH-GIRI23/"
 
