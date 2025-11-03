@@ -1,0 +1,118 @@
+/* Custom small animations and tweaks for the CLI Todo landing page */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root{
+	--card-bg: #0f0f10;
+	--muted: #9ca3af;
+}
+
+/* Global font */
+body, #root{
+	font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.mono{ font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace }
+
+.fade-in{
+	animation: fadeIn 800ms ease both;
+}
+
+@keyframes fadeIn{
+	from{ opacity: 0; transform: translateY(6px) }
+	to{ opacity: 1; transform: translateY(0) }
+}
+
+.img-pop{
+	transition: transform 360ms cubic-bezier(.22,.9,.3,1), box-shadow 360ms;
+}
+.img-pop:hover{ transform: translateY(-8px) scale(1.02); box-shadow: 0 18px 50px rgba(0,0,0,0.6); }
+
+/* subtle glass like border for cards */
+.glass-border{
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* make images responsive in older browsers */
+img{ max-width: 100%; height: auto; }
+
+/* Time pill in navbar */
+.time-pill{
+	display: inline-block;
+	padding: 6px 10px;
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	border: 1px solid rgba(255,255,255,0.04);
+	border-radius: 10px;
+	font-weight: 700;
+	letter-spacing: 0.4px;
+}
+
+/* Sparkles background - several floating twinkles */
+.sparkles{ position: absolute; inset: 0; pointer-events: none; z-index: 0 }
+
+.sparkles{ position: absolute; inset: 0; pointer-events: none; z-index: 0 }
+.sparkles span{
+	position: absolute;
+	width: 5px; height: 5px; border-radius: 50%;
+	/* softer, cool-toned sparkles */
+	background: radial-gradient(circle at 30% 30%, rgba(180,210,255,0.85), rgba(120,160,255,0.35) 30%, rgba(120,160,255,0.02) 60%);
+	opacity: 0.55;
+	transform: translate3d(0,0,0);
+	animation: twinkle 6s linear infinite;
+	mix-blend-mode: screen;
+}
+
+@keyframes twinkle{
+	0%{ transform: translateY(0) scale(0.7); opacity: 0.15 }
+	30%{ transform: translateY(-12px) scale(1.05); opacity: 0.9 }
+	100%{ transform: translateY(-30px) scale(0.85); opacity: 0.1 }
+}
+
+/* different durations / delays */
+.sparkles span:nth-child(2){ left: 8%; top: 18%; animation-duration:6.4s; animation-delay:1s }
+.sparkles span:nth-child(3){ left: 22%; top: 68%; animation-duration:7s; animation-delay:.5s }
+.sparkles span:nth-child(4){ left: 38%; top: 32%; animation-duration:5.6s; animation-delay:2s }
+.sparkles span:nth-child(5){ left: 58%; top: 12%; animation-duration:6.8s; animation-delay:0s }
+.sparkles span:nth-child(6){ left: 72%; top: 62%; animation-duration:7.6s; animation-delay:1.2s }
+.sparkles span:nth-child(7){ left: 84%; top: 28%; animation-duration:5.2s; animation-delay:1.8s }
+.sparkles span:nth-child(8){ left: 52%; top: 78%; animation-duration:7.2s; animation-delay:.8s }
+
+/* image frame subtle glow */
+.img-frame{ box-shadow: 0 18px 40px rgba(2,6,23,0.6); border-radius: 16px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
+
+/* Animated gradient border around images */
+.img-border{
+	position: relative; display: inline-block; padding: 6px; border-radius: 20px; background-clip: padding-box;
+}
+.img-border::before{
+  content: '';
+  position: absolute; inset: 0; border-radius: 22px; padding: 2px;
+  background: conic-gradient(from 0deg, #7c3aed, #06b6d4, #f472b6, #f97316, #7c3aed);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  z-index: 0; filter: blur(6px) opacity(0.85);
+  /* static decorative border (no rotation) */
+}
+.img-border > *{ position: relative; z-index: 2 }
+
+/* removed rotating animation for image borders to keep visuals stable */
+
+/* entrance and utility animations */
+.fade-in{ animation: fadeIn 700ms cubic-bezier(.2,.9,.2,1) both }
+.slide-up{ animation: slideUp 700ms cubic-bezier(.2,.9,.2,1) both }
+.stagger-1{ animation-delay: 120ms }
+.stagger-2{ animation-delay: 240ms }
+.stagger-3{ animation-delay: 360ms }
+
+@keyframes fadeIn{ from{ opacity: 0 } to{ opacity: 1 } }
+@keyframes slideUp{ from{ opacity: 0; transform: translateY(10px) } to{ opacity: 1; transform: translateY(0) } }
+
+/* button micro interaction */
+.btn-animate{ transition: transform 180ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms; }
+.btn-animate:hover{ transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 30px rgba(2,6,23,0.6) }
+
+/* subtle section backdrop to lift content */
+.lifted-card{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.03); border-radius: 14px }
+
