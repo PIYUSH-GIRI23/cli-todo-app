@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cli-todo.piyx.me/sitemap.xml

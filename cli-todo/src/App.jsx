@@ -134,6 +134,16 @@ function App() {
               <a href="https://x.com/GIRIPIYUSH2310"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" /></a>
             </div>
           </section>
+
+          <footer className="mt-16 py-8 border-t border-gray-800 text-center text-sm text-gray-500">
+            <p>© {new Date().getFullYear()} Piyush Giri. All rights reserved.</p>
+            <p className="mt-2 text-indigo-400">
+              For more projects, visit{' '}
+              <a href="https://piyx.me" target="_blank" rel="noreferrer" className="hover:text-indigo-300 underline underline-offset-4 transition-colors font-medium">
+                piyx.me
+              </a>
+            </p>
+          </footer>
         </main>
       </div>
     </div>
