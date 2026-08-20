@@ -1,0 +1,21 @@
+{
+  "name": "CLI Todo",
+  "short_name": "CLI Todo",
+  "description": "Minimal, Fast, Terminal-First C++ Todo App",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030416",
+  "theme_color": "#030416",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/og-image.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["developer", "productivity", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+}

@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cli-todo.piyx.me/sitemap.xml
+# Sitemaps
+Sitemap: https://cli.todo.piyx.me/sitemap.xml
+
+# Allow specific search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
